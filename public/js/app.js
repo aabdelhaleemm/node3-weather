@@ -1,17 +1,18 @@
 console.log("client side java script loadrad");
 
-fetch('http://localhost:3000/weather?adress=jeddah').then((response)=>{
-    response.json().then((data)=>{
-        if(data.error){
-            console.log(data.error);
+
+// fetch('/weather?adress=jeddah').then((response)=>{
+//     response.json().then((data)=>{
+//         if(data.error){
+//             console.log(data.error);
             
-        }
-        else{
-            console.log(data.forcast);
+//         }
+//         else{
+//             console.log(data.forcast);
             
-        }
-    })
-})
+//         }
+//     })
+// })
 
 const weather = document.querySelector('form')
 const loc=document.querySelector('input')
@@ -21,7 +22,7 @@ weather.addEventListener('submit',(e)=>{
     document.querySelector('.fres').textContent=('loading..')
     document.querySelector('.res').textContent=''
     
-    fetch('http://localhost:3000/weather?adress='+loc.value).then((response)=>{
+    fetch('/weather?adress='+loc.value).then((response)=>{
         
     response.json().then((data)=>{
         if(data.error){
